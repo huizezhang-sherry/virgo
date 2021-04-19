@@ -112,7 +112,7 @@ as_vegaspec.virgo <- function(spec, ...) {
 print.virgo <- function(x, renderer = "canvas", ...) {
   renderer <- arg_match(renderer, c("canvas", "svg"))
   print(vegawidget(as_vegaspec(x),
-    embed = vega_embed(renderer = renderer, actions = FALSE),
+    embed = vega_embed(renderer = renderer, actions = FALSE, tooltip = list(theme = "dark")),
     base_url = x$data$dir), ...)
   invisible(x)
 }
